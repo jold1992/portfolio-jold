@@ -1,4 +1,9 @@
 ---
+const BASE = import.meta.env.BASE_URL;
+// Returns correct URL for both local and external images
+const imgSrc = (preview: string) =>
+  preview.startsWith('http') ? preview : `${BASE}${preview}`;
+
 const projects = [
   {
     title: "Resto Admin App",
@@ -6,7 +11,7 @@ const projects = [
     tech: ["TypeScript", "Next.js", "Prisma", "Tailwind"],
     repo: "https://github.com/jold1992/resto-admin-app",
     live: "https://resto-admin-app.vercel.app",
-    preview: "./resto-admin-app.png",
+    preview: "resto-admin-app.png",
   },
   {
     title: "Netflix Clone",
@@ -14,7 +19,7 @@ const projects = [
     tech: ["TypeScript", "Next.js"],
     repo: "https://github.com/jold1992/netflix-clone-nextjs",
     live: "",
-    preview: "./netflix-clone-app.png",
+    preview: "netflix-clone-app.png",
   },
   {
     title: "Custom Hooks Library",
@@ -35,10 +40,10 @@ const projects = [
   {
     title: "Weather App",
     desc: "App para visualizar el clima de una ciudad específica.",
-    tech: ["Javascript","Astro"],
-    repo: "https://github.com/jold1992/crypto-price-app",
+    tech: ["Javascript", "Astro"],
+    repo: "https://github.com/jold1992/weather-app",
     live: "https://jold1992.github.io/weather-app/",
-    preview: "./weather-app.png",
+    preview: "weather-app.png",
   },
   {
     title: "Crypto Price App",
@@ -46,15 +51,15 @@ const projects = [
     tech: ["TypeScript", "Astro"],
     repo: "https://github.com/jold1992/crypto-price-app",
     live: "https://crypto-price-app-lilac.vercel.app/",
-    preview: "./crypto-price-app.png",
+    preview: "crypto-price-app.png",
   },
   {
-    title: "Gift for Mom´s day",
+    title: "Gift for Mom's day",
     desc: "App para generar un mensaje por el día de las madres.",
     tech: ["Javascript"],
     repo: "https://github.com/jold1992/gift-app-moms-day",
     live: "https://jold1992.github.io/gift-app-moms-day/",
-    preview: "./present-mom-day-app.png",
+    preview: "present-mom-day-app.png",
   },
 ];
 ---
@@ -74,7 +79,7 @@ const projects = [
             aria-label={project.live ? `Ver ${project.title} en vivo` : `Ver ${project.title} en GitHub`}
           >
             <img
-              src={project.preview}
+              src={imgSrc(project.preview)}
               alt={`Preview de ${project.title}`}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
