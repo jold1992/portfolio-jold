@@ -1,0 +1,29 @@
+---
+const skills = ["TypeScript", "Next.js", "React", "Astro", "Tailwind CSS", "Prisma", "PostgreSQL", "Node.js", "Git"];
+---
+<section id="about" class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">Sobre mí</h2>
+    <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full mb-12"></div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+          Desarrollador fullstack con sólida experiencia en frontend (<strong>React, Next.js, Astro, Tailwind</strong>) y backend (<strong>Node.js, Prisma, PostgreSQL</strong>, autenticación segura).
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          Actualmente en <span class="text-blue-600 dark:text-blue-400 font-semibold">CACES</span>, donde contribuyo al desarrollo de herramientas para el aseguramiento de la calidad educativa en Ecuador.
+        </p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4">Tecnologías principales</p>
+        <div class="flex flex-wrap gap-2">
+          {skills.map(skill => (
+            <span class="px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium border border-blue-100 dark:border-blue-800">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
